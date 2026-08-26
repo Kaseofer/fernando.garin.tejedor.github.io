@@ -1,0 +1,18 @@
+---
+const roles = [
+  { date: '2025 — Actualidad', company: 'URBETRACK', role: 'Software Engineer / Architect', text: 'Desarrollo de sistemas distribuidos IoT, APIs seguras, procesamiento de eventos y mensajería.', tags: ['.NET', 'Kafka', 'Docker', 'HMAC', 'Microservicios'] },
+  { date: '2011 — 2025', company: 'Inspección General de Justicia', role: 'Software Architect / Technical Lead', text: 'Arquitectura de aplicaciones empresariales, modernización de sistemas legacy, digitalización de procesos y liderazgo técnico.', tags: ['.NET', 'Angular', 'Oracle', 'PostgreSQL', 'REST APIs'] },
+  { date: '2000 — 2011', company: 'Experiencia previa', role: 'Software Developer', text: 'Desarrollo de sistemas para organismos públicos y privados.', tags: ['VB6', '.NET', 'Oracle', 'SQL Server'] },
+];
+---
+<section class="section" id="experiencia">
+  <div class="shell">
+    <p class="section-kicker">Experiencia destacada</p>
+    <div class="experience-grid">
+      <div class="timeline">
+        {roles.map((item) => <article class="role"><div class="role-date">{item.date}</div><div class="role-body"><h3>{item.company}</h3><strong>{item.role}</strong><p>{item.text}</p><div class="tags">{item.tags.map((tag) => <span>{tag}</span>)}</div></div></article>)}
+      </div>
+      <aside class="stats" aria-label="Cifras profesionales"><div><strong>20+</strong><span>Años de experiencia</span></div><div><strong>30+</strong><span>Proyectos exitosos</span></div><div><strong>10+</strong><span>Tecnologías dominadas</span></div></aside>
+    </div>
+  </div>
+</section>

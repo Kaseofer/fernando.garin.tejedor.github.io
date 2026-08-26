@@ -1,0 +1,13 @@
+---
+const projects = [
+  { number: '01', title: 'Agenda Salud', subtitle: 'Plataforma SaaS', text: 'Gestión de profesionales, pacientes, agenda, documentación e instituciones.', tags: ['.NET 8', 'Angular', 'PostgreSQL', 'Docker'], accent: 'cyan' },
+  { number: '02', title: 'IoT Gateway', subtitle: 'Arquitectura distribuida', text: 'Gateway de recepción de eventos IoT con autenticación HMAC, procesamiento y mensajería.', tags: ['.NET', 'Kafka', 'HMAC', 'Docker'], accent: 'blue' },
+  { number: '03', title: 'Gobierno Digital', subtitle: 'Modernización', text: 'Modernización de sistemas legacy y construcción de plataformas web modernas para el sector público.', tags: ['.NET', 'Angular', 'Oracle', 'PostgreSQL'], accent: 'violet' },
+];
+---
+<section class="section" id="proyectos">
+  <div class="shell">
+    <div class="section-heading"><div><p class="section-kicker">Proyectos destacados</p><h2>Soluciones que convierten complejidad en impacto.</h2></div><a href="#contacto">Hablemos de tu proyecto →</a></div>
+    <div class="projects-grid">{projects.map((project) => <article class={`project-card ${project.accent}`}><div class="project-top"><span>{project.number}</span><span>{project.subtitle}</span></div><div class="project-visual"><span></span><span></span><span></span><i></i></div><h3>{project.title}</h3><p>{project.text}</p><div class="tags">{project.tags.map((tag) => <span>{tag}</span>)}</div></article>)}</div>
+  </div>
+</section>

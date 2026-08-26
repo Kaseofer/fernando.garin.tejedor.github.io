@@ -1,0 +1,9 @@
+---
+const stack = ['.NET / C#', 'Angular', 'TypeScript', 'PostgreSQL', 'SQL Server', 'Docker', 'Azure', 'RabbitMQ', 'Kafka', 'Git'];
+---
+<section class="section section-tight" id="stack">
+  <div class="shell">
+    <p class="section-kicker">Tecnologías principales</p>
+    <div class="stack-list">{stack.map((item, index) => <div class="stack-item"><span>{String(index + 1).padStart(2, '0')}</span><strong>{item}</strong></div>)}</div>
+  </div>
+</section>

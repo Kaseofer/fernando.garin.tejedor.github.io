@@ -1,0 +1,23 @@
+---
+const pillars = [
+  { icon: '⬡', title: 'Arquitectura', text: 'Diseño arquitecturas escalables, microservicios, integración y mensajería.' },
+  { icon: '</>', title: 'Ingeniería', text: 'Desarrollo aplicaciones robustas con buenas prácticas y tecnologías actuales.' },
+  { icon: '◎', title: 'Liderazgo', text: 'Lidero equipos, tomo decisiones clave y promuevo la evolución tecnológica.' },
+];
+---
+<section class="section" id="sobre-mi">
+  <div class="shell">
+    <p class="section-kicker">Sobre mí</p>
+    <div class="about-grid">
+      <div>
+        <h2>Me apasiona resolver problemas complejos con tecnología.</h2>
+        <p>Soy un profesional con más de 20 años de experiencia diseñando, desarrollando y liderando soluciones de software en entornos desafiantes.</p>
+        <p>Me especializo en arquitectura de sistemas, modernización de aplicaciones y construcción de plataformas escalables.</p>
+        <div class="meta-row"><span>⌖ Buenos Aires, Argentina</span><span>◎ Español / Inglés</span><span>▱ Remoto</span></div>
+      </div>
+      <div class="pillars">
+        {pillars.map((pillar) => <article class="pillar"><span class="pillar-icon">{pillar.icon}</span><h3>{pillar.title}</h3><p>{pillar.text}</p></article>)}
+      </div>
+    </div>
+  </div>
+</section>

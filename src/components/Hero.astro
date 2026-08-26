@@ -1,0 +1,27 @@
+---
+const photo = `${import.meta.env.BASE_URL}images/fernando-garin.jpg`;
+const cv = `${import.meta.env.BASE_URL}cv/Fernando-Garin-Tejedor-CV.pdf`;
+---
+<section class="hero" id="inicio">
+  <div class="hero-glow"></div>
+  <div class="shell hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Fernando Garín Tejedor</p>
+      <h1>Software Engineer <span>&amp;</span> Architect</h1>
+      <p class="hero-lead">Diseño y construyo sistemas escalables, robustos y modernos que generan impacto real en las organizaciones.</p>
+      <div class="badges" aria-label="Especialidades">
+        <span>20+ años de experiencia</span><span>Arquitectura de Software</span><span>Liderazgo Técnico</span>
+      </div>
+      <div class="hero-actions">
+        <a class="button" href="#proyectos">Ver mis proyectos <span aria-hidden="true">→</span></a>
+        <a class="button button-ghost" href={cv} download>Descargar CV <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <div class="portrait-ring"></div>
+      <img class="portrait" src={photo} alt="Fernando Garín Tejedor trabajando frente a sus notebooks" width="1200" height="1600" fetchpriority="high" />
+      <div class="portrait-label"><span class="status-dot"></span> Disponible para nuevos desafíos</div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#sobre-mi" aria-label="Continuar a Sobre mí">Explorar <span>↓</span></a>
+</section>

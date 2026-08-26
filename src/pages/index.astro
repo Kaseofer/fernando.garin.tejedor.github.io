@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Stack from '../components/Stack.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+---
+<BaseLayout>
+  <Header />
+  <main><Hero /><About /><Stack /><Experience /><Projects /><Contact /></main>
+  <footer><div class="shell footer-inner"><a class="brand" href="#inicio">FG<span>.</span></a><p>© {new Date().getFullYear()} Fernando Garín Tejedor.</p><a href="#inicio">Volver arriba ↑</a></div></footer>
+</BaseLayout>
