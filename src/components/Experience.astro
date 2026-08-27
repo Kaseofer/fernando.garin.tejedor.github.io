@@ -1,8 +1,8 @@
 ---
 const roles = [
-  { date: '2011 — 2025', company: 'IGJ · Ministerio de Justicia', role: 'Arquitecto de Sistemas', text: 'Arquitectura y desarrollo de plataformas para balances y asambleas digitales, seguimiento de trámites, declaraciones juradas y digitalización documental.', tags: ['.NET 6', 'Angular 14', 'SQL Server', 'Oracle', 'PostgreSQL', 'MongoDB'] },
-  { date: '2005 — 2011', company: 'GLD Consultores SRL', role: 'Project Leader', text: 'Liderazgo del sistema de inscripción y gestión de torneos de la AAT, desde socios y categorías hasta la actualización de rankings nacionales.', tags: ['.NET', 'Ajax', 'SQL Server', 'Arquitectura'] },
-  { date: '2003 — 2004', company: 'AWK Consultores · Correo Argentino', role: 'Analista Programador', text: 'Desarrollo e implantación de un sistema de tracking de encomiendas para optimizar la eficiencia operativa.', tags: ['Java', 'Visual Basic 6', 'SQL Server'] },
+  { date: '2025 — Actualidad', company: 'Urbetrack', role: 'Software Engineer / Architect', text: 'Desarrollo de sistemas distribuidos IoT, APIs seguras, procesamiento de eventos y mensajería a escala.', tags: ['.NET', 'Kafka', 'Docker', 'HMAC', 'Microservicios'] },
+  { date: '2011 — 2025', company: 'Inspección General de Justicia', role: 'Software Architect / Technical Lead', text: 'Arquitectura de sistemas empresariales, modernización de sistemas legacy, digitalización de procesos y liderazgo técnico: balances y asambleas digitales, seguimiento de trámites, declaraciones juradas.', tags: ['.NET', 'Angular', 'Oracle', 'PostgreSQL', 'REST APIs'] },
+  { date: '2000 — 2011', company: 'Experiencia previa', role: '', text: 'Desarrollo de sistemas en organismos públicos y privados — desde tracking de encomiendas hasta gestión de torneos y socios.', tags: ['VB6', '.NET', 'Oracle', 'SQL Server'] },
 ];
 ---
 <section class="section" id="experiencia">
@@ -10,9 +10,9 @@ const roles = [
     <p class="section-kicker">Experiencia destacada</p>
     <div class="experience-grid">
       <div class="timeline">
-        {roles.map((item) => <article class="role"><div class="role-date">{item.date}</div><div class="role-body"><h3>{item.company}</h3><strong>{item.role}</strong><p>{item.text}</p><div class="tags">{item.tags.map((tag) => <span>{tag}</span>)}</div></div></article>)}
+        {roles.map((item) => <article class="role"><div class="role-date">{item.date}</div><div class="role-body"><h3>{item.company}</h3>{item.role && <strong>{item.role}</strong>}<p>{item.text}</p><div class="tags">{item.tags.map((tag) => <span>{tag}</span>)}</div></div></article>)}
       </div>
-      <aside class="stats" aria-label="Cifras profesionales"><div><strong>20+</strong><span>Años de experiencia</span></div><div><strong>14</strong><span>Años en transformación digital pública</span></div><div><strong>10+</strong><span>Tecnologías aplicadas</span></div></aside>
+      <aside class="stats" aria-label="Cifras profesionales"><div><strong>+20</strong><span>Años de experiencia</span></div><div><strong>30+</strong><span>Proyectos exitosos</span></div><div><strong>10+</strong><span>Tecnologías dominadas</span></div></aside>
     </div>
   </div>
 </section>

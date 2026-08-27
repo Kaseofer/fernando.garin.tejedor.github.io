@@ -1,0 +1,18 @@
+---
+const tools = ['Claude Code', 'Codex', 'GitHub Copilot'];
+---
+<section class="section section-tight ai-edge" id="ia">
+  <div class="shell">
+    <p class="section-kicker">Cómo trabajo hoy</p>
+    <div class="ai-grid">
+      <div class="ai-copy">
+        <h2>Dirijo agentes de IA como quien dirige un equipo.</h2>
+        <p>Estoy al día trabajando con <strong>Claude Code</strong> y <strong>Codex</strong>, y los uso a fondo en mi día a día. No son autocompletado: son herramientas súper potentes que, bien dirigidas, funcionan como tener un equipo técnico completo a cargo — cada agente investiga, propone, implementa y yo reviso, corrijo el rumbo y decido. El resultado, cuando uno sabe conducirlas, es producción de calidad a una velocidad que hace unos años era impensable.</p>
+        <p>Llevar el desarrollo asistido por IA al extremo no reemplaza el criterio técnico: lo multiplica. Sigo siendo yo quien piensa la arquitectura, cuestiona el problema y define qué es "bueno" — los agentes son el equipo que ejecuta esa visión conmigo.</p>
+      </div>
+      <div class="ai-tools" aria-label="Herramientas de IA que utilizo">
+        {tools.map((tool) => <span>{tool}</span>)}
+      </div>
+    </div>
+  </div>
+</section>

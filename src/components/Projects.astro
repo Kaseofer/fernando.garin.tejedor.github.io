@@ -1,13 +1,22 @@
 ---
+const teroLogo = `${import.meta.env.BASE_URL}/images/tero-logo.png`;
 const projects = [
-  { number: '01', title: 'Balances y Asambleas Digitales', subtitle: 'Transformación digital', text: 'Plataforma web para presentaciones anuales, con interfaces modernas, control de flujos y trazabilidad documental.', tags: ['.NET 6', 'Angular 14', 'SQL Server', 'MongoDB'], accent: 'cyan' },
-  { number: '02', title: 'Gobierno Digital', subtitle: 'Modernización legacy', text: 'Ecosistema para trámites, declaraciones juradas y digitalización documental con validaciones automatizadas y gestión centralizada.', tags: ['.NET', 'Oracle', 'PostgreSQL', 'Scrum'], accent: 'blue' },
-  { number: '03', title: 'Torneos AAT', subtitle: 'Gestión deportiva', text: 'Sistema integral de inscripción y gestión de torneos, categorías, socios y actualización de rankings nacionales.', tags: ['.NET', 'Ajax', 'SQL Server', 'Arquitectura'], accent: 'violet' },
+  {
+    number: '01',
+    title: 'Tero',
+    subtitle: 'Proyecto personal',
+    text: 'Plataforma SaaS multi-tenant de agenda digital para profesionales y organizaciones de salud/servicios. Reserva online, portal de autogestión para el cliente (con familiares a cargo), dashboard operativo del profesional con disponibilidad en tiempo real, motivos de turno configurables, notas y recordatorios, y notificaciones por email y WhatsApp. Diseñada y construida de punta a punta dirigiendo agentes de IA (Claude Code, Codex).',
+    tags: ['.NET 8', 'Angular', 'PostgreSQL', 'Docker', 'RabbitMQ', 'Microservicios'],
+    accent: 'cyan',
+    logo: teroLogo,
+  },
+  { number: '02', title: 'IoT Gateway', subtitle: 'Sistemas distribuidos', text: 'Gateway de recepción de eventos IoT con autenticación HMAC, procesamiento y mensajería a escala.', tags: ['.NET', 'Kafka', 'HMAC', 'Docker'], accent: 'blue' },
+  { number: '03', title: 'Gobierno Digital', subtitle: 'Modernización legacy', text: 'Modernización de sistemas legacy y construcción de plataformas web modernas para el sector público.', tags: ['.NET', 'Angular', 'Oracle', 'PostgreSQL'], accent: 'violet' },
 ];
 ---
 <section class="section" id="proyectos">
   <div class="shell">
     <div class="section-heading"><div><p class="section-kicker">Proyectos destacados</p><h2>Soluciones que convierten complejidad en impacto.</h2></div><a href="#contacto">Hablemos de tu proyecto →</a></div>
-    <div class="projects-grid">{projects.map((project) => <article class={`project-card ${project.accent}`}><div class="project-top"><span>{project.number}</span><span>{project.subtitle}</span></div><div class="project-visual"><span></span><span></span><span></span><i></i></div><h3>{project.title}</h3><p>{project.text}</p><div class="tags">{project.tags.map((tag) => <span>{tag}</span>)}</div></article>)}</div>
+    <div class="projects-grid">{projects.map((project) => <article class={`project-card ${project.accent}`}><div class="project-top"><span>{project.number}</span><span>{project.subtitle}</span></div>{project.logo ? <div class="project-visual project-visual-logo"><img src={project.logo} alt={`Logo de ${project.title}`} width="72" height="72" loading="lazy" /></div> : <div class="project-visual"><span></span><span></span><span></span><i></i></div>}<h3>{project.title}</h3><p>{project.text}</p><div class="tags">{project.tags.map((tag) => <span>{tag}</span>)}</div></article>)}</div>
   </div>
 </section>
