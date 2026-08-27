@@ -59,10 +59,13 @@ body{background:#06111d}
 @media(max-width:960px){.stack-groups{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.stack-groups{grid-template-columns:1fr}}
 .hero-grid{position:relative;display:block;height:585px}
-.hero-copy{position:absolute;left:0;top:50%;transform:translateY(-50%);width:52%;z-index:3}
-.portrait-wrap{position:absolute;right:0;top:9%;width:44%;height:82%;border-radius:26px;overflow:hidden;border:1px solid #5e92d34d}
-.portrait{object-position:center 32%}
-.portrait-wrap:after{background:linear-gradient(90deg,rgba(6,17,29,.5) 0%,transparent 18%),linear-gradient(transparent 78%,#07111fcc 100%)}
+.hero-copy{position:absolute;left:0;top:50%;transform:translateY(-50%);width:54%;z-index:3}
+/* La foto ocupa todo el hero (no un recuadro aparte) y se funde con el fondo por atrás del
+   texto: la mitad izquierda de fernando-garin-hero-wide.png ya es pared oscura lisa, así que
+   el degradé no necesita inventar nada — sólo termina de igualarla al --bg del sitio. */
+.portrait-wrap{position:absolute;inset:0;width:100%;height:100%;border-radius:0;border:0}
+.portrait{object-position:64% 30%}
+.portrait-wrap:after{background:linear-gradient(90deg,#06111d 0%,#06111d 12%,rgba(6,17,29,.92) 30%,rgba(6,17,29,.68) 44%,rgba(6,17,29,.28) 58%,transparent 72%),linear-gradient(transparent 74%,#07111fcc 100%)}
 /* Reset explícito para mobile: las 3 rondas de ajustes de arriba (desktop) dejaban
    .hero-copy con un ancho/posición que en pantallas angostas desbordaba el viewport
    (texto y botones cortados en el borde) — acá se fija todo de una vez, sin depender de
@@ -73,10 +76,15 @@ body{background:#06111d}
   .hero-copy{position:static;top:auto;left:auto;transform:none;width:auto;padding:0 20px;max-width:none}
   .hero h1{font-size:2.6rem;max-width:none}
   .hero-lead{max-width:none}
-  .portrait-wrap{position:relative;inset:auto;right:auto;top:auto;width:calc(100% - 40px);height:360px;margin:20px auto 0;border-radius:20px}
+  .portrait-wrap{position:relative;inset:auto;right:auto;top:auto;width:100%;height:360px;margin:20px 0 0;border-radius:0}
   .portrait{object-position:64% 30%}
+  /* Ver arriba (línea ~25, "Ajustes visuales"): esa regla sin media query pisa el reset de
+     línea 3 en TODO ancho porque está más abajo en el archivo — mismo patrón que ya rompió el
+     hero. Sin esto, .role-body (260px fijo de la 2ª columna) no entra en un celular y estira
+     scrollWidth de toda la página, cortando visualmente el resto de las secciones también. */
+  .experience-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
   .hero h1{font-size:2.1rem}
-  .portrait-wrap{width:calc(100% - 28px);height:280px}
+  .portrait-wrap{height:280px}
 }
