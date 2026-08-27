@@ -1,9 +1,10 @@
 ---
+import FgtMark from './FgtMark.astro';
 const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 ---
 <header class="site-header" data-header>
   <div class="shell nav-wrap">
-    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio"><img src={`${import.meta.env.BASE_URL}/images/fgt-logo.png`} alt="FGT" width="58" height="39" /></a>
+    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio"><FgtMark height={26} /></a>
     <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
       <span></span><span></span><span></span>
     </button>
@@ -15,4 +16,5 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
       <a class="button button-small button-ghost" href={cv} download>Descargar CV <span aria-hidden="true">↓</span></a>
     </nav>
   </div>
+  <div class="nav-backdrop" data-menu-backdrop></div>
 </header>

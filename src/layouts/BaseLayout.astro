@@ -39,15 +39,20 @@ const image = new URL(`${import.meta.env.BASE_URL}/images/fernando-garin-hero-wi
       const header = document.querySelector('[data-header]');
       const toggle = document.querySelector('[data-menu-toggle]');
       const menu = document.querySelector('[data-menu]');
+      const backdrop = document.querySelector('[data-menu-backdrop]');
+      const closeMenu = () => {
+        toggle?.setAttribute('aria-expanded', 'false');
+        menu?.classList.remove('is-open');
+        backdrop?.classList.remove('is-open');
+      };
       toggle?.addEventListener('click', () => {
         const open = toggle.getAttribute('aria-expanded') === 'true';
         toggle.setAttribute('aria-expanded', String(!open));
         menu?.classList.toggle('is-open');
+        backdrop?.classList.toggle('is-open');
       });
-      document.querySelectorAll('[data-menu] a').forEach((link) => link.addEventListener('click', () => {
-        toggle?.setAttribute('aria-expanded', 'false');
-        menu?.classList.remove('is-open');
-      }));
+      backdrop?.addEventListener('click', closeMenu);
+      document.querySelectorAll('[data-menu] a').forEach((link) => link.addEventListener('click', closeMenu));
       const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 24);
       onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
     </script>
