@@ -1,23 +1,86 @@
 ---
 const cdn = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
-const stack = [
-  { name: '.NET / C#', icon: `${cdn}/dot-net/dot-net-original.svg` },
-  { name: 'Angular', icon: `${cdn}/angular/angular-original.svg` },
-  { name: 'TypeScript', icon: `${cdn}/typescript/typescript-original.svg` },
-  { name: 'SQL Server', icon: `${cdn}/microsoftsqlserver/microsoftsqlserver-original.svg` },
-  { name: 'PostgreSQL', icon: `${cdn}/postgresql/postgresql-original.svg` },
-  { name: 'Oracle', icon: `${cdn}/oracle/oracle-original.svg` },
-  { name: 'MongoDB', icon: `${cdn}/mongodb/mongodb-original.svg` },
-  { name: 'Docker', icon: `${cdn}/docker/docker-original.svg` },
-  { name: 'Azure', icon: `${cdn}/azure/azure-original.svg` },
-  { name: 'Kafka', icon: `${cdn}/apachekafka/apachekafka-original.svg` },
-  { name: 'RabbitMQ', icon: `${cdn}/rabbitmq/rabbitmq-original.svg` },
-  { name: 'Git', icon: `${cdn}/git/git-original.svg` },
+const icon = (slug: string, variant = 'original') => `${cdn}/${slug}/${slug}-${variant}.svg`;
+
+const categories = [
+  {
+    title: 'Backend',
+    items: [
+      { name: '.NET / C#', icon: icon('dot-net') },
+      { name: 'ASP.NET Core', icon: icon('dotnetcore') },
+      { name: 'REST APIs', mono: '⇄' },
+      { name: 'Java', icon: icon('java') },
+    ],
+  },
+  {
+    title: 'Frontend',
+    items: [
+      { name: 'Angular', icon: icon('angular') },
+      { name: 'TypeScript', icon: icon('typescript') },
+      { name: 'HTML / CSS', icon: icon('html5') },
+    ],
+  },
+  {
+    title: 'Arquitectura & Patrones',
+    items: [
+      { name: 'Microservicios', mono: '⬡' },
+      { name: 'Mensajería / Eventos', mono: '⇉' },
+      { name: 'Arquitectura de Software', mono: '◎' },
+    ],
+  },
+  {
+    title: 'Datos',
+    items: [
+      { name: 'PostgreSQL', icon: icon('postgresql') },
+      { name: 'SQL Server', icon: icon('microsoftsqlserver') },
+      { name: 'Oracle', icon: icon('oracle') },
+      { name: 'MongoDB', icon: icon('mongodb') },
+      { name: 'MySQL', icon: icon('mysql') },
+    ],
+  },
+  {
+    title: 'Infraestructura & DevOps',
+    items: [
+      { name: 'Docker', icon: icon('docker') },
+      { name: 'Azure', icon: icon('azure') },
+      { name: 'Kafka', icon: icon('apachekafka') },
+      { name: 'RabbitMQ', icon: icon('rabbitmq') },
+    ],
+  },
+  {
+    title: 'Herramientas',
+    items: [
+      { name: 'Git / GitHub', icon: icon('git') },
+      { name: 'VS Code', icon: icon('vscode') },
+      { name: 'Claude Code', mono: 'AI' },
+      { name: 'Codex', mono: 'AI' },
+    ],
+  },
 ];
+
+const others = ['VB6', 'ASP', 'Ajax', 'Windows Forms', 'HMAC', 'JWT', 'Scrum'];
 ---
 <section class="section section-tight" id="stack">
   <div class="shell">
     <p class="section-kicker">Tecnologías principales</p>
-    <div class="stack-list">{stack.map((item) => <div class="stack-item"><img src={item.icon} alt="" width="42" height="42" loading="lazy" /><strong>{item.name}</strong></div>)}</div>
+    <div class="stack-groups">
+      {categories.map((cat) => (
+        <div class="stack-group">
+          <h3>{cat.title}</h3>
+          <div class="stack-group-items">
+            {cat.items.map((item) => (
+              <div class="stack-chip">
+                {item.icon ? <img src={item.icon} alt="" width="24" height="24" loading="lazy" /> : <span class="stack-mono">{item.mono}</span>}
+                <span>{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="stack-others">
+      <span class="stack-others-label">Otras tecnologías</span>
+      <div class="stack-others-list">{others.map((tech) => <span>{tech}</span>)}</div>
+    </div>
   </div>
 </section>

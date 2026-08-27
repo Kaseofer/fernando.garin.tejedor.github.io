@@ -12,5 +12,5 @@ import Contact from '../components/Contact.astro';
 <BaseLayout>
   <Header />
   <main><Hero /><About /><AiEdge /><Stack /><Experience /><Projects /><Contact /></main>
-  <footer><div class="shell footer-inner"><a class="brand" href="#inicio">FG<span>.</span></a><p>© {new Date().getFullYear()} Fernando Garín Tejedor.</p><a href="#inicio">Volver arriba ↑</a></div></footer>
+  <footer><div class="shell footer-inner"><a class="brand" href="#inicio"><img src={`${import.meta.env.BASE_URL}/images/fgt-logo.png`} alt="FGT" width="52" height="35" /></a><p>&copy; {new Date().getFullYear()} Ing. Fernando Garín Tejedor.</p><a href="#inicio">Volver arriba ↑</a></div></footer>
 </BaseLayout>
