@@ -1,13 +1,15 @@
 ---
-// Monograma propio (no AI-generado): "FG" en blanco + "T" en azul de marca, con una barra
-// azul debajo — mismo lenguaje visual que el resto del sitio (blanco/azul, sin caja ni
-// efectos 3D), pensado para leerse bien tanto en el header como en el footer.
+// Monograma propio (no AI-generado): "GARÍN TEJEDOR" en mayúsculas azules (Manrope 800,
+// mismo peso que el resto del sitio) + una línea fina, con "Fernando" en itálica elegante
+// (Playfair Display) apoyado sobre esa línea — mismo lenguaje visual blanco/azul del sitio,
+// sin caja ni efectos 3D.
 interface Props {
   height?: number;
 }
-const { height = 30 } = Astro.props;
+const { height = 44 } = Astro.props;
 ---
-<svg class="fgt-mark" viewBox="0 0 92 36" style={`height:${height}px`} role="img" aria-label="FGT">
-  <text x="0" y="25" font-family="Manrope, sans-serif" font-weight="800" font-size="25" letter-spacing="0.3" fill="var(--text, #f6f8fb)">FG<tspan fill="var(--blue, #2878ff)">T</tspan></text>
-  <rect x="1" y="31" width="52" height="2.6" rx="1.3" fill="var(--blue, #2878ff)" />
+<svg class="fgt-mark" viewBox="0 0 236 80" style={`height:${height}px`} role="img" aria-label="Garín Tejedor Fernando">
+  <text x="0" y="26" font-family="Manrope, sans-serif" font-weight="800" font-size="23" letter-spacing="1" fill="var(--blue, #2878ff)">GAR&#205;N TEJEDOR</text>
+  <rect x="0" y="36" width="236" height="2" fill="var(--line, rgba(151,186,223,.4))" />
+  <text x="236" y="72" text-anchor="end" font-family="'Playfair Display', serif" font-style="italic" font-weight="600" font-size="36" fill="var(--text, #f6f8fb)">Fernando</text>
 </svg>
