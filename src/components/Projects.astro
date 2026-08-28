@@ -1,7 +1,6 @@
 ---
 const teroLogo = `${import.meta.env.BASE_URL}/images/tero-logo.png`;
-const iotGatewayPhoto = `${import.meta.env.BASE_URL}/images/iot-gateway.png`;
-const gobiernoDigitalPhoto = `${import.meta.env.BASE_URL}/images/gobierno-digital.png`;
+const sicPhoto = `${import.meta.env.BASE_URL}/images/sic-historia-clinica.svg`;
 const projects = [
   {
     number: '01',
@@ -12,9 +11,15 @@ const projects = [
     accent: 'cyan',
     logo: teroLogo,
   },
-  { number: '02', title: 'IoT Gateway', subtitle: 'Sistemas distribuidos', text: 'Gateway de recepción de eventos IoT con autenticación HMAC, procesamiento y mensajería a escala.', tags: ['.NET', 'Kafka', 'HMAC', 'Docker'], accent: 'blue', photo: iotGatewayPhoto },
-  { number: '03', title: 'Gobierno Digital', subtitle: 'Modernización legacy', text: 'Modernización de sistemas legacy y construcción de plataformas web modernas para el sector público.', tags: ['.NET', 'Angular', 'Oracle', 'PostgreSQL'], accent: 'violet', photo: gobiernoDigitalPhoto },
-  { number: '04', title: 'SIC — Sistema Integral de Cardiología', subtitle: 'Proyecto propio · 1998–2000', text: 'Sistema de gestión de historias clínicas y estudios cardiológicos para un centro médico: carga y seguimiento de historias clínicas, gestión y turnos de estudios, listados e informes, y emisión de carnets de salud.', tags: ['Visual Basic 6', 'SQL Server'], accent: 'blue' },
+  {
+    number: '02',
+    title: 'SIC — Software de Historia Clínica',
+    subtitle: 'Proyecto propio · 1998–2000',
+    text: 'Software de gestión de historia clínica electrónica para consultorio médico: carga y seguimiento de la historia clínica del paciente, evolución y antecedentes, gestión de estudios y turnos, recetas, listados e informes, y emisión de carnets de salud.',
+    tags: ['Visual Basic 6', 'SQL Server'],
+    accent: 'violet',
+    photo: sicPhoto,
+  },
 ];
 ---
 <section class="section" id="proyectos">
@@ -37,3 +42,9 @@ const projects = [
     ))}</div>
   </div>
 </section>
+
+<style>
+  /* dos proyectos: mantener el ancho de tarjeta, no estirar a 3 columnas */
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 380px)); }
+  @media (max-width: 820px) { .projects-grid { grid-template-columns: 1fr; } }
+</style>
