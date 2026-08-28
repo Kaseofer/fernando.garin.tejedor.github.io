@@ -20,47 +20,44 @@ const svgArchitecture = `<svg viewBox="0 0 24 24" fill="none" stroke="#9873ff" s
 
 const categories: { title: string; items: StackItem[] }[] = [
   {
-    title: 'Backend',
+    title: 'Backend .NET / Microservicios',
     items: [
       { name: '.NET / C#', icon: icon('dot-net') },
       { name: 'ASP.NET Core', icon: icon('dotnetcore') },
+      { name: 'Microservicios', svg: svgMicroservices },
+      { name: 'Event-driven', svg: svgQueue },
       { name: 'REST APIs', mono: '⇄' },
+      { name: 'Arquitectura de Software', svg: svgArchitecture },
       { name: 'Java', icon: icon('java') },
     ],
   },
   {
-    title: 'Frontend',
+    title: 'Frontend & UX',
     items: [
       { name: 'Angular', icon: icon('angular') },
       { name: 'TypeScript', icon: icon('typescript') },
+      { name: 'RxJS', icon: icon('rxjs') },
       { name: 'HTML / CSS', icon: icon('html5') },
     ],
   },
   {
-    title: 'Arquitectura & Patrones',
+    title: 'Mensajería & Infra',
     items: [
-      { name: 'Microservicios', svg: svgMicroservices },
-      { name: 'Mensajería / Colas', svg: svgQueue },
-      { name: 'Arquitectura de Software', svg: svgArchitecture },
+      { name: 'Kafka', icon: icon('apachekafka'), white: true },
+      { name: 'RabbitMQ', icon: icon('rabbitmq') },
+      { name: 'Docker', icon: icon('docker') },
+      { name: 'Azure', icon: icon('azure') },
+      { name: 'CI/CD', mono: '⟳' },
     ],
   },
   {
-    title: 'Datos',
+    title: 'Bases de datos',
     items: [
       { name: 'PostgreSQL', icon: icon('postgresql') },
       { name: 'SQL Server', icon: icon('microsoftsqlserver') },
       { name: 'Oracle', icon: icon('oracle') },
       { name: 'MongoDB', icon: icon('mongodb') },
       { name: 'MySQL', icon: icon('mysql') },
-    ],
-  },
-  {
-    title: 'Infraestructura & DevOps',
-    items: [
-      { name: 'Docker', icon: icon('docker') },
-      { name: 'Azure', icon: icon('azure') },
-      { name: 'Kafka', icon: icon('apachekafka'), white: true },
-      { name: 'RabbitMQ', icon: icon('rabbitmq') },
     ],
   },
   {
@@ -74,7 +71,7 @@ const categories: { title: string; items: StackItem[] }[] = [
   },
 ];
 
-const others = ['VB6', 'ASP', 'Ajax', 'Windows Forms', 'HMAC', 'JWT', 'Scrum'];
+const others = ['VB6', 'ASP', 'Ajax', 'Windows Forms', 'SPA', 'Design System', 'HMAC', 'JWT', 'Scrum'];
 ---
 <section class="section section-tight" id="stack">
   <div class="shell">

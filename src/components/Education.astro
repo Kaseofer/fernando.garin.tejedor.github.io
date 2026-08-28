@@ -1,0 +1,33 @@
+---
+const study = {
+  period: '1998 — 2002',
+  title: 'Ingeniero en Informática',
+  place: 'Universidad Nacional de La Matanza',
+};
+
+const courses = [
+  { year: '2019', name: 'Microservicios y contenedores con .NET y Docker' },
+  { year: '2015', name: 'APIs REST y Servicios con ASP.NET' },
+  { year: '2012', name: 'Arquitectura de Software y Patrones de Diseño' },
+];
+---
+<section class="section section-tight" id="formacion">
+  <div class="shell">
+    <p class="section-kicker">Formación</p>
+    <div class="timeline">
+      <article class="role">
+        <div class="role-date">{study.period}</div>
+        <div class="role-body">
+          <h3>{study.title}</h3>
+          <strong>{study.place}</strong>
+        </div>
+      </article>
+      {courses.map((course) => (
+        <article class="role">
+          <div class="role-date">{course.year}</div>
+          <div class="role-body"><h3>{course.name}</h3></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
