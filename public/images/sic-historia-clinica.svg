@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 180" role="img" aria-label="Médico usando un software de historia clínica">
+  <defs>
+    <linearGradient id="sic-scr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f2942"/>
+      <stop offset="1" stop-color="#0a1b2c"/>
+    </linearGradient>
+    <radialGradient id="sic-glow" cx="66%" cy="40%" r="55%">
+      <stop offset="0" stop-color="#2bd0e7" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#2bd0e7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="180" fill="#0a1523"/>
+  <rect width="600" height="180" fill="url(#sic-glow)"/>
+
+  <!-- desk line -->
+  <path d="M0 150 H600" stroke="#1c3350" stroke-width="2"/>
+
+  <!-- ================= doctor ================= -->
+  <g transform="translate(70 44)">
+    <!-- chair back -->
+    <rect x="-34" y="46" width="12" height="60" rx="6" fill="#12263d"/>
+    <!-- coat / torso -->
+    <path d="M-18 106 C-18 66 -6 52 12 52 C30 52 42 66 42 106 Z" fill="#f6f8fb"/>
+    <path d="M12 52 L12 100" stroke="#d7e2ef" stroke-width="2"/>
+    <!-- collar -->
+    <path d="M2 54 L12 68 L22 54" fill="none" stroke="#c3d2e2" stroke-width="3" stroke-linecap="round"/>
+    <!-- stethoscope -->
+    <path d="M4 58 C-6 74 -6 92 6 96" fill="none" stroke="#2878ff" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="7" cy="98" r="4" fill="#2878ff"/>
+    <!-- arm reaching to keyboard -->
+    <path d="M38 84 C56 88 70 98 82 108" fill="none" stroke="#f6f8fb" stroke-width="10" stroke-linecap="round"/>
+    <!-- head -->
+    <circle cx="12" cy="34" r="17" fill="#e9d3bf"/>
+    <path d="M-5 30 C-4 12 28 12 29 30 C29 22 24 15 12 15 C0 15 -5 22 -5 30 Z" fill="#3a4a5c"/>
+  </g>
+
+  <!-- keyboard -->
+  <rect x="118" y="140" width="120" height="10" rx="3" fill="#16293f"/>
+
+  <!-- ================= monitor / EHR software ================= -->
+  <g transform="translate(250 22)">
+    <!-- stand -->
+    <rect x="150" y="126" width="10" height="16" fill="#1c3350"/>
+    <rect x="128" y="140" width="54" height="6" rx="3" fill="#1c3350"/>
+    <!-- bezel -->
+    <rect x="0" y="0" width="312" height="128" rx="12" fill="#0c1b2b" stroke="#2b425f" stroke-width="2"/>
+    <!-- screen -->
+    <rect x="10" y="10" width="292" height="108" rx="7" fill="url(#sic-scr)"/>
+
+    <!-- app top bar -->
+    <rect x="10" y="10" width="292" height="20" rx="7" fill="#10283f"/>
+    <circle cx="24" cy="20" r="3" fill="#2bd0e7"/>
+    <rect x="34" y="17" width="90" height="6" rx="3" fill="#7f9bb8"/>
+    <rect x="250" y="16" width="42" height="8" rx="4" fill="#2878ff"/>
+
+    <!-- left list (pacientes) -->
+    <rect x="18" y="40" width="78" height="70" rx="5" fill="#0b1d30"/>
+    <rect x="26" y="48" width="52" height="5" rx="2.5" fill="#5e7690"/>
+    <rect x="26" y="60" width="62" height="4" rx="2" fill="#3f5570"/>
+    <rect x="26" y="70" width="58" height="4" rx="2" fill="#3f5570"/>
+    <rect x="24" y="80" width="66" height="12" rx="3" fill="#173a5c"/>
+    <rect x="26" y="98" width="54" height="4" rx="2" fill="#3f5570"/>
+
+    <!-- main: patient header -->
+    <circle cx="116" cy="48" r="9" fill="#2878ff"/>
+    <rect x="132" y="42" width="80" height="6" rx="3" fill="#dfe9f7"/>
+    <rect x="132" y="52" width="120" height="4" rx="2" fill="#5e7690"/>
+
+    <!-- vitals cards -->
+    <rect x="108" y="66" width="44" height="26" rx="4" fill="#0e2135" stroke="#24405f"/>
+    <rect x="156" y="66" width="44" height="26" rx="4" fill="#0e2135" stroke="#24405f"/>
+    <rect x="204" y="66" width="44" height="26" rx="4" fill="#0e2135" stroke="#24405f"/>
+    <rect x="114" y="72" width="20" height="4" rx="2" fill="#2bd0e7"/>
+    <rect x="162" y="72" width="20" height="4" rx="2" fill="#9873ff"/>
+    <rect x="210" y="72" width="20" height="4" rx="2" fill="#2ae5a3"/>
+    <rect x="114" y="82" width="30" height="5" rx="2.5" fill="#8da8c4"/>
+    <rect x="162" y="82" width="30" height="5" rx="2.5" fill="#8da8c4"/>
+    <rect x="210" y="82" width="30" height="5" rx="2.5" fill="#8da8c4"/>
+
+    <!-- evolución: line chart -->
+    <rect x="108" y="98" width="140" height="12" rx="3" fill="#0b1d30"/>
+    <path d="M112 106 L126 101 L140 104 L154 98 L168 103 L182 99 L196 102 L210 97 L224 100 L240 96"
+          fill="none" stroke="#2bd0e7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- + medical marks floating -->
+    <g stroke="#2878ff" stroke-width="2.4" stroke-linecap="round" opacity="0.9">
+      <path d="M270 40 v10 M265 45 h10"/>
+    </g>
+    <g stroke="#2bd0e7" stroke-width="2" stroke-linecap="round" opacity="0.7">
+      <path d="M284 96 v8 M280 100 h8"/>
+    </g>
+  </g>
+</svg>
