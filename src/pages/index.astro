@@ -6,12 +6,13 @@ import About from '../components/About.astro';
 import AiEdge from '../components/AiEdge.astro';
 import Stack from '../components/Stack.astro';
 import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import FgtMark from '../components/FgtMark.astro';
 ---
 <BaseLayout>
   <Header />
-  <main><Hero /><About /><AiEdge /><Stack /><Experience /><Projects /><Contact /></main>
+  <main><Hero /><About /><AiEdge /><Stack /><Experience /><Education /><Projects /><Contact /></main>
   <footer><div class="shell footer-inner"><a class="brand" href="#inicio"><FgtMark height={24} /></a><p>&copy; {new Date().getFullYear()} Ing. Fernando Garín Tejedor.</p><a href="#inicio">Volver arriba ↑</a></div></footer>
 </BaseLayout>
