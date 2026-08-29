@@ -6,9 +6,9 @@ const study = {
 };
 
 const courses = [
-  { year: '2019', name: 'Microservicios y contenedores con .NET y Docker' },
-  { year: '2015', name: 'APIs REST y Servicios con ASP.NET' },
-  { year: '2012', name: 'Arquitectura de Software y Patrones de Diseño' },
+  { year: '2024', name: 'Docker & Kubernetes: The Complete Guide', by: 'Stephen Grider · Udemy' },
+  { year: '2022', name: 'Apache Kafka Series – Learn Apache Kafka for Beginners', by: 'Stéphane Maarek · Udemy' },
+  { year: '2021', name: '.NET Microservices: CQRS & Event Sourcing with Kafka', by: 'Mehmet Özkaya · Udemy' },
 ];
 ---
 <section class="section section-tight" id="formacion">
@@ -25,7 +25,7 @@ const courses = [
       {courses.map((course) => (
         <article class="role">
           <div class="role-date">{course.year}</div>
-          <div class="role-body"><h3>{course.name}</h3></div>
+          <div class="role-body"><h3>{course.name}</h3><strong>{course.by}</strong></div>
         </article>
       ))}
     </div>
