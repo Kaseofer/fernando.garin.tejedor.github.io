@@ -1,0 +1,95 @@
+---
+// Ventana de editor para el hero: escribe la instancia token por token y
+// después muestra el build y el prompt de la terminal.
+const tokens = [
+  ['kw', 'var'], ['punc', ' '], ['ident', 'ingeniero'], ['punc', ' = '],
+  ['kw', 'new'], ['punc', ' '], ['type', 'FernandoGarinTejedor'], ['punc', '();'],
+];
+---
+<div class="code-window" data-code-window aria-label="var ingeniero = new FernandoGarinTejedor();">
+  <div class="cw-frame">
+    <div class="cw-titlebar" aria-hidden="true">
+      <span class="cw-dot" style="background:#ff5f57"></span>
+      <span class="cw-dot" style="background:#febc2e"></span>
+      <span class="cw-dot" style="background:#28c840"></span>
+      <span class="cw-tab">Program.cs</span>
+      <span class="cw-badge">.NET 10 · C# 14</span>
+    </div>
+    <div class="cw-code" aria-hidden="true">
+      <span class="cw-comment">// Portfolio — Software Engineer</span>
+      <div class="cw-line" data-cw-line>{tokens.map(([cls, text]) => <span class={cls}>{text}</span>)}</div>
+    </div>
+    <div class="cw-terminal" data-cw-terminal aria-hidden="true">
+      <p class="ok">✔ Build succeeded · 0 warnings · 0 errors</p>
+      <p><span class="user">fernando@portfolio</span>:<span class="path">~/proyectos</span>$ <span class="cw-cursor"></span></p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .code-window {
+    --kw: #569cd6; --ident: #9cdcfe; --type: #4ec9b0; --punc: #d4d4d4;
+    --comment: #6a9955; --muted: #858585; --dotnet: #512bd4; --dotnet-light: #9780e5;
+    width: min(560px, 100%); min-width: 0; margin-bottom: 22px;
+    font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  }
+  .cw-badge {
+    display: inline-flex; align-items: center; margin-left: auto;
+    background: var(--dotnet); color: #fff; font-size: .68rem; font-weight: 600;
+    padding: .2rem .65rem; border-radius: 999px; box-shadow: 0 0 16px #512bd499;
+  }
+  .cw-frame {
+    background: #1e1e1e; border: 1px solid #3c3c3c; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 24px 60px #0000008c, 0 0 0 1px #512bd440;
+  }
+  .cw-titlebar { display: flex; align-items: center; gap: .45rem; background: #2d2d30; padding: .55rem .9rem; font-size: .75rem; color: var(--muted); }
+  .cw-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .cw-tab { margin-left: .8rem; color: #fff; border-bottom: 2px solid var(--dotnet-light); padding-bottom: 2px; }
+  .cw-code { padding: .85rem 1.3rem; font-size: clamp(.95rem, 1.45vw, 1.25rem); line-height: 1.6; }
+  .cw-comment { display: block; color: var(--comment); font-size: .62em; margin-bottom: .3em; }
+  .cw-line { font-weight: 600; min-height: 1.6em; white-space: nowrap; overflow: hidden; }
+  .kw { color: var(--kw); } .ident { color: var(--ident); } .type { color: var(--type); } .punc { color: var(--punc); }
+  .cw-cursor {
+    display: inline-block; width: .55em; height: 1.05em; background: var(--dotnet-light);
+    vertical-align: -0.15em; margin-left: .05em; animation: cw-blink 1s steps(1) infinite;
+  }
+  @keyframes cw-blink { 50% { opacity: 0; } }
+  .cw-terminal { border-top: 1px solid #3c3c3c; background: #181818; padding: .65rem 1.3rem .8rem; font-size: .8rem; color: var(--punc); transition: opacity .5s; }
+  .cw-terminal p { margin: 0; }
+  .cw-terminal p + p { margin-top: .3rem; }
+  .cw-terminal .ok { color: var(--type); }
+  .cw-terminal .user { color: var(--dotnet-light); font-weight: 700; }
+  .cw-terminal .path { color: var(--kw); }
+  .code-window[data-typing] .cw-terminal { opacity: 0; }
+  @media (max-width: 620px) {
+    .cw-line { white-space: normal; overflow-wrap: anywhere; }
+    .cw-terminal { font-size: .72rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cw-cursor { animation: none; } }
+</style>
+
+<script>
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll<HTMLElement>('[data-code-window]').forEach((win) => {
+    if (reduced) return; // sin animación: queda escrito y con la terminal visible
+    const line = win.querySelector<HTMLElement>('[data-cw-line]')!;
+    const spans = Array.from(line.querySelectorAll<HTMLSpanElement>('span'));
+    const texts = spans.map((s) => s.textContent ?? '');
+    const cursor = document.createElement('span');
+    cursor.className = 'cw-cursor';
+    spans.forEach((s) => (s.textContent = ''));
+    win.setAttribute('data-typing', '');
+    line.appendChild(cursor);
+    let t = 0, c = 0;
+    const type = () => {
+      if (t >= spans.length) {
+        setTimeout(() => { cursor.remove(); win.removeAttribute('data-typing'); }, 900);
+        return;
+      }
+      spans[t].textContent += texts[t][c++];
+      if (c >= texts[t].length) { t++; c = 0; }
+      setTimeout(type, 55 + Math.random() * 60);
+    };
+    setTimeout(type, 500);
+  });
+</script>

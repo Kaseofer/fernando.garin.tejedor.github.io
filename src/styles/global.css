@@ -88,3 +88,7 @@ body{background:#06111d}
   .hero h1{font-size:2.1rem}
   .portrait-wrap{height:280px}
 }
+
+/* Título del hero más contenido */
+@media(min-width:961px){.hero{min-height:860px;padding-top:120px}.hero h1{font-size:clamp(2.9rem,4.1vw,4.3rem)}.hero-copy{padding-left:max(40px,calc((min(100vw,1440px) - var(--max))/2))}}
+.hero-copy{min-width:0}

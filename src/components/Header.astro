@@ -4,7 +4,7 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 ---
 <header class="site-header" data-header>
   <div class="shell nav-wrap">
-    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio"><FgtMark height={76} animate /></a>
+    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio"><FgtMark height={84} animate /></a>
     <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
       <span></span><span></span><span></span>
     </button>
@@ -20,9 +20,19 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 </header>
 
 <style>
-  .brand-logo { flex-shrink: 0; width: min(380px, calc(100% - 52px)); }
+  .nav-wrap { max-width: 1440px; width: calc(100% - 40px); }
+  .brand-logo { flex-shrink: 0; width: min(630px, calc(100% - 52px)); }
+  /* Alinea la firma con el título del hero (misma sangría que .hero-copy); el margen
+     negativo compensa el x=27 del texto dentro del SVG (27/900 del ancho). */
+  @media (min-width: 961px) {
+    .nav-wrap { width: min(100%, 1440px); max-width: none; height: 96px;
+      padding-left: max(40px, calc((min(100vw, 1440px) - var(--max)) / 2)); padding-right: 40px; }
+    .brand-logo { margin-left: -19px; }
+    .nav a { white-space: nowrap; }
+  }
+  @media (min-width: 1321px) and (max-width: 1440px) { .nav { gap: 10px; } .nav-wrap { padding-right: 24px; } }
   .nav { gap: 14px; font-size: .75rem; }
-  @media (max-width: 1100px) {
+  @media (max-width: 1320px) {
     .menu-toggle { display: block; position: relative; z-index: 61; }
     .nav {
       visibility: hidden; opacity: 0; pointer-events: none;

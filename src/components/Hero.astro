@@ -1,4 +1,5 @@
 ---
+import CodeWindow from './CodeWindow.astro';
 const photo = `${import.meta.env.BASE_URL}/images/fernando-garin-hero-wide.png`;
 const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 ---
@@ -6,6 +7,7 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
   <div class="hero-glow"></div>
   <div class="shell hero-grid">
     <div class="hero-copy">
+      <CodeWindow />
       <h1>Desarrollador de Soluciones <span>&amp;</span> Microservicios .NET</h1>
       <p class="hero-lead">Desarrollo sistemas backend con .NET: microservicios, APIs y procesamiento de eventos. Trabajo con mensajería y contenedores para integrar sistemas distribuidos.</p>
       <div class="badges" aria-label="Especialidades">
