@@ -1,6 +1,6 @@
 ---
-const teroLogo = `${import.meta.env.BASE_URL}/images/tero-logo.png`;
-const sicPhoto = `${import.meta.env.BASE_URL}/images/sic-historia-clinica.svg`;
+const teroPhoto = `${import.meta.env.BASE_URL}/images/tero-turno-confirmado.png`;
+const consultorioPhoto = `${import.meta.env.BASE_URL}/images/consultorio-one-historia-clinica.png`;
 const projects = [
   {
     number: '01',
@@ -9,16 +9,18 @@ const projects = [
     text: 'Plataforma SaaS multi-tenant de agenda digital para profesionales y organizaciones de salud/servicios. Reserva online, portal de autogestión para el cliente (con familiares a cargo), dashboard operativo del profesional con disponibilidad en tiempo real, motivos de turno configurables, notas y recordatorios, y notificaciones por email y WhatsApp. Diseñada y construida de punta a punta dirigiendo agentes de IA (Claude Code, Codex).',
     tags: ['.NET 8', 'Angular 22', 'PostgreSQL', 'Docker', 'RabbitMQ', 'Microservicios'],
     accent: 'cyan',
-    logo: teroLogo,
+    photo: teroPhoto,
+    alt: 'Mail de turno confirmado enviado por Tero (datos de ejemplo)',
   },
   {
     number: '02',
-    title: 'SIC — Software de Historia Clínica',
-    subtitle: 'Proyecto propio · 1998–2000',
-    text: 'Software de gestión de historia clínica electrónica para consultorio médico: carga y seguimiento de la historia clínica del paciente, evolución y antecedentes, gestión de estudios y turnos, recetas, listados e informes, y emisión de carnets de salud.',
-    tags: ['Visual Basic 6', 'SQL Server'],
+    title: 'Consultorio One',
+    subtitle: 'Proyecto propio · 1998 – actualidad',
+    text: 'Gestión para consultorios. Nació en 1998 como SIC, en Visual Basic 6 y Access, y fue mi tesis final de Ingeniería en Informática (calificada con 10). Hoy lo estoy migrando a una plataforma multi-tenant con microservicios, con versión web y mobile.',
+    tags: ['.NET 10', 'Angular', 'RabbitMQ', 'PostgreSQL', 'MinIO'],
     accent: 'violet',
-    photo: sicPhoto,
+    photo: consultorioPhoto,
+    alt: 'Mockup del resumen de historia clínica de Consultorio One (datos de ejemplo)',
   },
 ];
 ---
@@ -28,13 +30,7 @@ const projects = [
     <div class="projects-grid">{projects.map((project) => (
       <article class={`project-card ${project.accent}`}>
         <div class="project-top"><span>{project.number}</span><span>{project.subtitle}</span></div>
-        {project.logo ? (
-          <div class="project-visual project-visual-logo"><img src={project.logo} alt={`Logo de ${project.title}`} width="72" height="72" loading="lazy" /></div>
-        ) : project.photo ? (
-          <div class="project-visual project-visual-photo"><img src={project.photo} alt="" width="600" height="180" loading="lazy" /></div>
-        ) : (
-          <div class="project-visual"><span></span><span></span><span></span><i></i></div>
-        )}
+        <div class="project-visual project-visual-photo"><img src={project.photo} alt={project.alt} width="600" height="180" loading="lazy" /></div>
         <h3>{project.title}</h3>
         <p>{project.text}</p>
         <div class="tags">{project.tags.map((tag) => <span>{tag}</span>)}</div>

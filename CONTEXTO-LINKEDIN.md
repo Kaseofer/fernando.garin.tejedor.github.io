@@ -12,30 +12,30 @@ También cuenta con experiencia en:
 
 - Modernización y migración de sistemas legacy.
 - Arquitectura de aplicaciones web y servicios de integración.
-- Desarrollo full stack con .NET, Angular y TypeScript.
+- Frontend con Angular y TypeScript cuando el proyecto lo requiere.
 - Bases de datos PostgreSQL, SQL Server, Oracle y MongoDB.
 - Sistemas de geolocalización, telemetría e IoT.
-- Liderazgo técnico y acompañamiento de equipos de desarrollo.
+- Perfil hands-on: busca roles de desarrollo, no de gestión de personas.
 
 Su forma de trabajo parte de comprender el problema y su contexto antes de elegir una solución técnica. El foco está en construir sistemas mantenibles, escalables y útiles para las personas que los utilizan.
 
 ## Experiencia que conviene destacar
 
-### Urbetrack | 2025 - actualidad
+### Urbetrack | 2026 - actualidad
 
 Backend Developer Sr. en una plataforma de geolocalización de flotas. Desarrollo de microservicios, APIs, ingesta de sensores IoT, procesamiento de eventos y trazabilidad de servicios de higiene urbana en tiempo real.
 
-Tecnologías y conceptos asociados: .NET, microservicios, Kafka, Docker, PostgreSQL, REST APIs, GPS e IoT.
+Tecnologías y conceptos asociados: .NET 8/9/10, microservicios, Kafka, SQL Server, NHibernate, Docker, AWS S3 (posiciones GPS), REST APIs, GPS e IoT. Flujo de trabajo en Azure DevOps y Confluence.
 
-### Inspección General de Justicia | 2011 - 2025
+### Inspección General de Justicia | 2011 - 2026
 
-Desarrollo backend y arquitectura de sistemas durante 13 años, con foco en la modernización de aplicaciones legacy hacia plataformas web y SPA con Angular. Participación en sistemas de balances y asambleas digitales, seguimiento de trámites, declaraciones juradas, gestión documental y digitalización de trámites.
+Desarrollo backend y arquitectura de sistemas durante casi 15 años, con foco en la modernización de aplicaciones legacy hacia plataformas web y SPA con Angular. Participación en sistemas de balances y asambleas digitales, seguimiento de trámites, declaraciones juradas, gestión documental y digitalización de trámites.
 
 ### GLD Consultores | 2005 - 2011
 
 Arquitectura y liderazgo técnico en soluciones para la Asociación Argentina de Tenis y el Ministerio de Trabajo, incluyendo sistemas de torneos, seguimiento de afiliados, procesos de regularización laboral y liquidación de planes sociales.
 
-### Correo Argentino | 2003 - 2004
+### AWK Consultores (cliente: Correo Argentino) | 2003 - 2004
 
 Desarrollo e implantación de un sistema de seguimiento de envíos postales, con captura de eventos logísticos, trazabilidad para clientes y tableros operativos.
 
@@ -47,9 +47,9 @@ Proyecto personal: plataforma SaaS multi-tenant de agenda digital para profesion
 
 Fue diseñada y construida de punta a punta con .NET 8, Angular 22, PostgreSQL, Docker, RabbitMQ y microservicios, utilizando agentes de IA como parte del proceso de desarrollo.
 
-### SIC - Software de Historia Clínica
+### Consultorio One (antes SIC)
 
-Proyecto propio desarrollado entre 1998 y 2000 para la gestión de historias clínicas electrónicas en consultorios médicos. Incluía evolución y antecedentes, estudios, turnos, recetas, informes y carnets de salud.
+Proyecto propio de gestión para consultorios. Nació en 1998 como SIC, en Visual Basic 6 y Access, y fue la tesis final de Ingeniería en Informática (calificada con 10). Hoy se está migrando a una plataforma multi-tenant con microservicios (.NET 10, Angular, RabbitMQ, PostgreSQL, MinIO), con versión web y mobile. No está a la venta: contar poco.
 
 ## Mensaje principal sugerido
 
