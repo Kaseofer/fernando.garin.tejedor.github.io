@@ -1,15 +1,15 @@
 ---
-// Monograma propio (no AI-generado): "GARÍN TEJEDOR" en mayúsculas azules (Manrope 800,
-// mismo peso que el resto del sitio) + una línea fina, con "Fernando" en itálica elegante
-// (Playfair Display) apoyado sobre esa línea — mismo lenguaje visual blanco/azul del sitio,
-// sin caja ni efectos 3D.
+// Firma monocromática inspirada en una terminal, sin brillo ni marco.
 interface Props {
   height?: number;
 }
 const { height = 44 } = Astro.props;
 ---
-<svg class="fgt-mark" viewBox="0 0 236 80" style={`height:${height}px`} role="img" aria-label="Garín Tejedor Fernando">
-  <text x="0" y="26" font-family="Manrope, sans-serif" font-weight="800" font-size="23" letter-spacing="1" fill="var(--blue, #2878ff)">GAR&#205;N TEJEDOR</text>
-  <rect x="0" y="36" width="236" height="2" fill="var(--line, rgba(151,186,223,.4))" />
-  <text x="236" y="72" text-anchor="end" font-family="'Playfair Display', serif" font-style="italic" font-weight="600" font-size="36" fill="var(--text, #f6f8fb)">Fernando</text>
+<svg class="fgt-mark" viewBox="0 0 160 32" width={height * 5} height={height} role="img" aria-label="Ing. Fernando Garín Tejedor" fill="#d6e3dd" style="flex-shrink:0;letter-spacing:0">
+  <path d="m2 5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" />
+  <g font-family="'Cascadia Code', Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="500">
+    <text x="17" y="12">Ing. Fernando</text>
+    <text x="17" y="28">Garín Tejedor</text>
+  </g>
+  <rect x="115" y="26" width="7" height="2" />
 </svg>
