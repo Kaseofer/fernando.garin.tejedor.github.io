@@ -4,7 +4,7 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 ---
 <header class="site-header" data-header>
   <div class="shell nav-wrap">
-    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio"><FgtMark height={76} /></a>
+    <a class="brand brand-logo" href="#inicio" aria-label="Ir al inicio"><FgtMark height={76} animate /></a>
     <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" data-menu-toggle>
       <span></span><span></span><span></span>
     </button>
@@ -20,9 +20,19 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 </header>
 
 <style>
-  .brand-logo { flex-shrink: 0; }
-  @media (min-width: 961px) and (max-width: 1100px) {
-    .nav { gap: 10px; font-size: .72rem; }
-    .nav .button-small { padding-inline: 10px; }
+  .brand-logo { flex-shrink: 0; width: min(380px, calc(100% - 52px)); }
+  .nav { gap: 14px; font-size: .75rem; }
+  @media (max-width: 1100px) {
+    .menu-toggle { display: block; position: relative; z-index: 61; }
+    .nav {
+      visibility: hidden; opacity: 0; pointer-events: none;
+      position: absolute; top: 82px; right: 20px;
+      width: min(72vw, 280px); padding: 18px;
+      flex-direction: column; align-items: stretch; gap: 16px;
+      background: #0b1928; border: 1px solid var(--line);
+      border-radius: 14px; z-index: 61;
+    }
+    .nav.is-open { visibility: visible; opacity: 1; pointer-events: auto; }
+    .nav-backdrop.is-open { display: block; position: fixed; inset: 0; background: #03080f9e; z-index: 59; }
   }
 </style>
