@@ -1,15 +1,31 @@
 ---
-// Firma monocromática inspirada en una terminal, sin brillo ni marco.
+// Cartel original, encuadrado y reducido al espacio de la marca.
 interface Props {
   height?: number;
 }
 const { height = 44 } = Astro.props;
+const logo = `${import.meta.env.BASE_URL}/images/logo_nombre_profolio.png`;
 ---
-<svg class="fgt-mark" viewBox="0 0 160 32" width={height * 5} height={height} role="img" aria-label="Ing. Fernando Garín Tejedor" fill="#d6e3dd" style="flex-shrink:0;letter-spacing:0">
-  <path d="m2 5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5" />
-  <g font-family="'Cascadia Code', Consolas, 'Liberation Mono', monospace" font-size="12" font-weight="500">
-    <text x="17" y="12">Ing. Fernando</text>
-    <text x="17" y="28">Garín Tejedor</text>
-  </g>
-  <rect x="115" y="26" width="7" height="2" />
-</svg>
+<span class="fgt-mark" style={`height:${height}px;width:${height * 2.8}px`}>
+  <img src={logo} alt="Ing. Fernando Garín Tejedor" width="1536" height="1024" />
+</span>
+
+<style>
+  .fgt-mark {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .fgt-mark img {
+    position: absolute;
+    width: 145%;
+    max-width: none;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -48%);
+    filter: saturate(.65) brightness(.82) contrast(1.08);
+  }
+</style>
