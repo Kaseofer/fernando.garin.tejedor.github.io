@@ -13,11 +13,7 @@ const roles = [
       <div class="timeline">
         {roles.map((item) => <article class="role"><div class="role-date">{item.date}</div><div class="role-body"><h3>{item.company}</h3>{item.role && <strong>{item.role}</strong>}<p>{item.text}</p><div class="tags">{item.tags.map((tag) => <span>{tag}</span>)}</div></div></article>)}
       </div>
+      <aside class="stats" aria-label="Cifras profesionales"><div><strong>+20</strong><span>Años de experiencia</span></div><div><strong>5</strong><span>Países con la plataforma actual</span></div><div><strong>2</strong><span>Proyectos propios en desarrollo</span></div></aside>
     </div>
   </div>
 </section>
-
-<style>
-  /* Las cifras pasaron a la franja de métricas bajo el hero */
-  .experience-grid { grid-template-columns: 1fr; }
-</style>

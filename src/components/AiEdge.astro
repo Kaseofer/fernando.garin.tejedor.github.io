@@ -1,39 +1,18 @@
 ---
 const tools = ['Claude Code', 'Codex', 'GitHub Copilot'];
-const steps = [
-  { n: '01 · Diseño', color: '#569cd6', title: 'Defino arquitectura y contratos', text: 'Límites de servicios, eventos, modelo de datos y criterios de calidad antes de escribir una línea.' },
-  { n: '02 · Ejecución', color: '#dcdcaa', title: 'Los agentes implementan', text: 'Claude Code y Codex trabajan sobre tareas acotadas, con el contexto y las reglas que les doy.' },
-  { n: '03 · Revisión', color: '#4ec9b0', title: 'Reviso, testeo y decido', text: 'Code review, tests y seguridad. Nada llega a producción sin pasar por mi criterio.' },
-];
 ---
 <section class="section section-tight ai-edge" id="ia">
   <div class="shell">
     <p class="section-kicker">Cómo trabajo hoy</p>
     <div class="ai-grid">
       <div class="ai-copy">
-        <h2>Dirijo agentes de IA como a un equipo técnico. El criterio sigue siendo mío.</h2>
+        <h2>Dirijo agentes de IA como quien dirige un equipo.</h2>
+        <p>Estoy al día trabajando con <strong>Claude Code</strong> y <strong>Codex</strong>, y los uso a fondo en mi día a día. No son autocompletado: son herramientas súper potentes que, bien dirigidas, funcionan como tener un equipo técnico completo a cargo — cada agente investiga, propone, implementa y yo reviso, corrijo el rumbo y decido. El resultado, cuando uno sabe conducirlas, es producción de calidad a una velocidad que hace unos años era impensable.</p>
+        <p>Llevar el desarrollo asistido por IA al extremo no reemplaza el criterio técnico: lo multiplica. Sigo siendo yo quien piensa la arquitectura, cuestiona el problema y define qué es "bueno" — los agentes son el equipo que ejecuta esa visión conmigo.</p>
       </div>
       <div class="ai-tools" aria-label="Herramientas de IA que utilizo">
         {tools.map((tool) => <span>{tool}</span>)}
       </div>
     </div>
-    <ol class="ai-steps">
-      {steps.map((s) => (
-        <li class="ai-step">
-          <span class="ai-step-n" style={`color:${s.color}`}>{s.n}</span>
-          <h3>{s.title}</h3>
-          <p>{s.text}</p>
-        </li>
-      ))}
-    </ol>
   </div>
 </section>
-
-<style>
-  .ai-steps { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-  .ai-step { padding: 26px; border: 1px solid var(--line); border-radius: 14px; background: #0a1a2bcc; display: flex; flex-direction: column; gap: 12px; }
-  .ai-step-n { font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace; font-size: .8rem; }
-  .ai-step h3 { margin: 0; font-size: 1.2rem; }
-  .ai-step p { margin: 0; font-size: .9rem; line-height: 1.6; color: var(--muted); }
-  @media (max-width: 900px) { .ai-steps { grid-template-columns: minmax(0, 1fr); gap: 14px; } .ai-step { padding: 20px; } }
-</style>
