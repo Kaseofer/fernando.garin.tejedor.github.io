@@ -92,3 +92,13 @@ body{background:#06111d}
 /* Título del hero más contenido */
 @media(min-width:961px){.hero{min-height:860px;padding-top:120px}.hero h1{font-size:clamp(2.9rem,4.1vw,4.3rem)}.hero-copy{padding-left:max(40px,calc((min(100vw,1440px) - var(--max))/2))}}
 .hero-copy{min-width:0}
+
+/* Cursor de terminal: sólo para dispositivos con mouse. */
+@media (hover: hover) and (pointer: fine) {
+  html, body, body * {
+    cursor: url('/images/cursor-terminal.svg') 9 7, auto !important;
+  }
+  input, textarea, [contenteditable="true"] {
+    cursor: text !important;
+  }
+}
