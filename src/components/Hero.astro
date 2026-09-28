@@ -1,4 +1,5 @@
 ---
+const photo = `${import.meta.env.BASE_URL}/images/fernando-garin-hero-wide.png`;
 const source = [
   "var ingeniero = new FernandoGarinTejedor",
   "{",
@@ -90,6 +91,7 @@ const terminal = [
 ---
 <section id="inicio" class="container hero-preview">
   <div class="copy">
+    <img class="hero-photo" src={photo} alt="Fernando Garín Tejedor trabajando frente a sus notebooks" width="1672" height="940" fetchpriority="high" />
     <p class="status mono"><span class="dot"></span>Disponible para nuevos desafíos · Remoto desde Buenos Aires</p>
     <h1>Backend .NET para sistemas distribuidos que escalan.</h1>
     <p class="sub">Ingeniero en Informática con más de 20 años desarrollando software. Hoy trabajo con microservicios .NET, APIs y procesamiento de eventos en tiempo real.</p>
@@ -192,22 +194,42 @@ a:hover { color: #c7bdf7; }
 
   .hero-preview {
     display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 64px; align-items: center;
+    gap: 28px; align-items: start;
     padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 6vw, 80px);
   }
-  .copy { display: flex; flex-direction: column; gap: 28px; }
-  .status { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; color: var(--type); }
+  .copy {
+    position: relative; isolation: isolate; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: flex-end; gap: 18px;
+    min-height: 638px; padding: 300px 28px 28px;
+    border-radius: 14px; background: #07111f;
+  }
+  .hero-photo {
+    position: absolute; inset: 0 0 auto; z-index: -2;
+    width: 100%; height: 440px; object-fit: cover; object-position: 68% 28%;
+  }
+  .copy::before {
+    content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(7,17,31,.28), rgba(7,17,31,.02) 25%, rgba(7,17,31,.85) 49%, #07111f 68%);
+  }
+  .status { position: absolute; top: 20px; left: 24px; right: 24px; display: flex; align-items: center; gap: 10px; margin: 0; font-size: 11px; color: #b8f1df; text-shadow: 0 1px 5px #000; }
+  .status .dot { flex-shrink: 0; }
   .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--type); box-shadow: 0 0 0 4px rgba(78,201,176,.15); }
   h1 {
-    margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 800;
+    margin: 0; font-size: clamp(32px, 3vw, 44px); line-height: 1.08; font-weight: 800;
     letter-spacing: -0.02em; color: var(--text-strong);
   }
-  .sub { margin: 0; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55; color: var(--muted); max-width: 560px; }
+  .sub { margin: 0; font-size: 16px; line-height: 1.6; color: #bdcadd; max-width: 560px; }
   .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
 
 
   @media (max-width: 1100px) {
     .hero-preview { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    .hero-photo { object-position: 65% 30%; }
+    .copy { min-height: 620px; }
+  }
+  @media (max-width: 600px) {
+    .copy { padding: 300px 20px 24px; }
+    .status { left: 20px; right: 20px; }
     .ctas .btn { flex: 1 1 100%; }
   }
 
