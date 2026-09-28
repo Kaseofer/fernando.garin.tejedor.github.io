@@ -1,28 +1,187 @@
----
-import CodeWindow from './CodeWindow.astro';
-const photo = `${import.meta.env.BASE_URL}/images/fernando-garin-hero-wide.png`;
-const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
----
-<section class="hero" id="inicio">
-  <div class="hero-glow"></div>
-  <div class="shell hero-grid">
-    <div class="hero-copy">
-      <CodeWindow />
-      <h1>Desarrollador de Soluciones <span>&amp;</span> Microservicios .NET</h1>
-      <p class="hero-lead">Desarrollo sistemas backend con .NET: microservicios, APIs y procesamiento de eventos. Trabajo con mensajería y contenedores para integrar sistemas distribuidos.</p>
-      <div class="badges" aria-label="Especialidades">
-        <span>+20 años de experiencia</span><span>Microservicios .NET</span><span>Arquitectura de Software</span>
-      </div>
-      <div class="hero-actions">
-        <a class="button" href="#proyectos">Ver mis proyectos <span aria-hidden="true">→</span></a>
-        <a class="button button-ghost" href={cv} download>Descargar CV <span aria-hidden="true">↓</span></a>
-      </div>
-    </div>
-    <div class="portrait-wrap">
-      <div class="portrait-ring"></div>
-      <img class="portrait" src={photo} alt="Fernando Garín Tejedor trabajando frente a sus notebooks" width="1672" height="940" fetchpriority="high" />
-      <div class="portrait-label"><span class="status-dot"></span> Disponible para nuevos desafíos</div>
-    </div>
+<section id="inicio" class="container hero-preview">
+  <div class="copy">
+    <p class="status mono"><span class="dot"></span>Disponible para nuevos desafíos · Remoto desde Buenos Aires</p>
+    <h1>Backend .NET para sistemas distribuidos que escalan.</h1>
+    <p class="sub">Ingeniero en Informática con más de 20 años desarrollando software. Hoy trabajo con microservicios .NET, APIs y procesamiento de eventos en tiempo real.</p>
+    <div class="ctas"><a href="#proyectos" class="btn btn-primary">Ver proyectos →</a><a href="#contacto" class="btn btn-ghost">Hablemos</a></div>
   </div>
-  <a class="scroll-cue" href="#sobre-mi" aria-label="Continuar a Sobre mí">Explorar <span>↓</span></a>
+  <div role="group" aria-label="Animación de Program.cs: recorrido profesional. La trayectoria completa está en la sección Experiencia." class="window" data-code-story data-source='["var ingeniero = new FernandoGarinTejedor","{","    Base = \"Buenos Aires, AR\",","    Idiomas = [\"Español\", \"Inglés\"],","    Modalidad = Remoto","};","","// 1998 — 2002","ingeniero.Estudiar(\"Ing. en Informática\", \"UNLaM\");","ingeniero.Tesis = new Consultorio(Vb6, Access)","{","    Nota = 10 // sí, diez","};","","// 2003 — Correo Argentino","var envio = new Envio([Java, Vb6, SqlServer]);","envio.Rastrear(Admision, Despacho, Arribo,","               Distribucion, Entrega);","","// 2005 — GLD Consultores","var equipo = ingeniero.Liderar(clientes: 3);","equipo.Construir<Torneos>(\"AAT\")","      .ConAfiliaciones().ConFixture().ConRanking();","equipo.Liquidar(planesSociales, en: TSql);","","// 2011 — IGJ, casi 15 años","ingeniero.Rol = Referente(\".NET\") | Arquitecto;","igj.Stack = [AspNetCore, Angular, WebApi];","foreach (var legacy in igj.Sistemas)","    await legacy.ModernizarAsync(to: Spa);","db.Motores = [SqlServer, Oracle, PostgreSql];","","// 2026 — hoy","ingeniero.Stack = [Net10, Kafka, Docker, S3];","var flota = kafka.Consume<Gps>(paises: 5);","await foreach (var posicion in flota)","{","    await telemetria.ProcesarAsync(posicion);","    await s3.GuardarAsync(posicion);","}","","// side projects","ingeniero.Proyectos.Add(new Tero(MultiTenant));","ingeniero.Proyectos.Add(new ConsultorioOne(Net10));","","// cómo trabajo","var codigo = await agentes.ImplementarAsync(plan);","ingeniero.Revisar(codigo);   // el criterio es mío","","Console.WriteLine(ingeniero.Disponible);"]' data-typos='[{"find":"Rastrear","offset":3,"wrong":"rt"},{"find":"ModernizarAsync","offset":5,"wrong":"nr"},{"find":"ImplementarAsync","offset":4,"wrong":"mw"}]' data-terminal='[{"html":"<span style=\"color:var(--violet-text)\">$</span> dotnet run"},{"html":"✔ Build succeeded · 0 warnings · 0 errors","cls":"ok"},{"html":"<span style=\"color:var(--kw)\">info:</span> 20+ años · .NET 2.0 → 10 · 2 proyectos propios","cls":"muted"},{"html":"True"},{"html":"<span class=\"user\">fernando@portfolio</span>:<span style=\"color:var(--kw)\">~</span>$ <span class=\"cursor\"></span>"}]'>
+    <div class="bar mono"><span class="d" style="background:#ff5f57"></span><span class="d" style="background:#febc2e"></span><span class="d" style="background:#28c840"></span><span class="tab">Program.cs</span><span class="grow"></span><button type="button" class="cs-skip">Saltar ⏭</button><button type="button" class="cs-replay" hidden>↻ Repetir</button></div>
+    <div class="scroller mono" aria-hidden="true"><div class="cs-gutter"></div><div class="cs-code"></div></div>
+    <div class="cs-term mono" aria-hidden="true"></div>
+  </div>
 </section>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
+/* Tokens y utilidades compartidas del portfolio */
+.hero-preview-preview {
+  --bg: #07111f;
+  --surface: #0b1829;
+  --surface-2: #0f2139;
+  --line: #16273f;
+  --line-2: #1c3150;
+  --text: #e6edf6;
+  --text-strong: #f4f7fb;
+  --muted: #9fb0c6;
+  --subtle: #6f86a3;
+
+  --violet: #512bd4;         /* .NET */
+  --violet-text: #a594f0;    /* violeta legible sobre fondo oscuro */
+  --violet-bg: #0d1030;
+  --violet-line: #2b2466;
+
+  /* Sintaxis C# (VS Dark+) */
+  --kw: #569cd6;
+  --ident: #9cdcfe;
+  --type: #4ec9b0;
+  --method: #dcdcaa;
+  --ctrl: #c586c0;
+  --str: #ce9178;
+  --comment: #6a9955;
+  --punc: #c8d3e0;
+
+  --font-sans: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  --gutter: clamp(16px, 5.5vw, 80px);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--violet-text); text-decoration: none; }
+a:hover { color: #c7bdf7; }
+:focus-visible { outline: 2px solid var(--violet-text); outline-offset: 3px; border-radius: 6px; }
+
+.container { width: 100%; max-width: 1440px; margin: 0 auto; padding-inline: var(--gutter); }
+.section { padding-block: clamp(64px, 9vw, 120px) 0; scroll-margin-top: 80px; }
+
+.eyebrow { font-family: var(--font-mono); font-size: 14px; color: var(--violet-text); margin: 0 0 12px; }
+.h2 {
+  margin: 0; font-size: clamp(30px, 3.4vw, 44px); font-weight: 800;
+  letter-spacing: -0.02em; line-height: 1.1; color: var(--text-strong);
+}
+.lead { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+.mono { font-family: var(--font-mono); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 24px; border-radius: 10px;
+  font-size: 16px; font-weight: 600; transition: background .2s, border-color .2s;
+}
+.btn-primary { background: var(--violet); color: #fff; }
+.btn-primary:hover { background: #6340e0; color: #fff; }
+.btn-ghost { border: 1px solid #2a3f5f; color: var(--text); }
+.btn-ghost:hover { border-color: var(--violet-text); color: var(--text); }
+
+.chip {
+  display: inline-block; padding: 5px 10px; border-radius: 6px;
+  font-family: var(--font-mono); font-size: 13px;
+}
+
+.card { border: 1px solid var(--line-2); border-radius: var(--radius); background: var(--surface); }
+
+:global(.cursor) {
+  display: inline-block; width: .55em; height: 1.05em; background: var(--violet-text);
+  vertical-align: -0.15em; animation: blink 1s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  :global(.cursor) { animation: none; }
+}
+
+
+  .hero-preview {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px; align-items: center;
+    padding-top: clamp(48px, 7vw, 96px); padding-bottom: clamp(48px, 6vw, 80px);
+  }
+  .copy { display: flex; flex-direction: column; gap: 28px; }
+  .status { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 14px; color: var(--type); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--type); box-shadow: 0 0 0 4px rgba(78,201,176,.15); }
+  h1 {
+    margin: 0; font-size: clamp(40px, 4.8vw, 68px); line-height: 1.02; font-weight: 800;
+    letter-spacing: -0.02em; color: var(--text-strong);
+  }
+  .sub { margin: 0; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55; color: var(--muted); max-width: 560px; }
+  .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+
+  @media (max-width: 1100px) {
+    .hero-preview { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+    .ctas .btn { flex: 1 1 100%; }
+  }
+
+
+  .window {
+    border-radius: 14px; overflow: hidden; border: 1px solid #22314a; background: #1e1e1e;
+    box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(81,43,212,.2);
+  }
+  .bar { height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 8px 0 16px; background: #2d2d30; font-size: 13px; }
+  .d { width: 12px; height: 12px; border-radius: 50%; }
+  .tab { margin-left: 14px; color: #fff; border-bottom: 2px solid var(--violet-text); padding-bottom: 2px; }
+  .grow { flex: 1; }
+  .bar button {
+    min-height: 32px; padding: 0 12px; border-radius: 6px; border: 1px solid #3c3c3c;
+    background: transparent; color: #c8c8c8; font: inherit; font-size: 12px; cursor: pointer;
+  }
+  .bar button:hover { border-color: var(--violet-text); color: #fff; }
+
+  .scroller {
+    height: 420px; overflow: hidden; display: grid; grid-template-columns: auto minmax(0, 1fr);
+    gap: 18px; padding: 18px 20px 18px 0; font-size: clamp(12px, 1.05vw, 15px); line-height: 1.75;
+    scroll-behavior: smooth;
+  }
+  .cs-gutter { text-align: right; color: #5a5a5a; min-width: 44px; user-select: none; }
+  .cs-code { color: #d4d4d4; white-space: pre; }
+
+  .cs-term { border-top: 1px solid #333; background: #161616; padding: 16px 24px 20px; font-size: clamp(12px, 1vw, 14px); line-height: 1.9; color: #c8c8c8; min-height: 176px; }
+  .cs-term :global(.cs-tl) { opacity: 0; animation: show .35s ease forwards; }
+  .cs-term :global(.ok) { color: var(--type); }
+  .cs-term :global(.muted) { color: var(--muted); }
+  .cs-term :global(.user) { color: var(--violet-text); font-weight: 700; }
+  @keyframes show { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  /* Colores de sintaxis C# */
+  .cs-code :global(.tk-kw) { color: var(--kw); }
+  .cs-code :global(.tk-ctrl) { color: var(--ctrl); }
+  .cs-code :global(.tk-t) { color: var(--type); }
+  .cs-code :global(.tk-m) { color: var(--method); }
+  .cs-code :global(.tk-i) { color: var(--ident); }
+  .cs-code :global(.tk-s) { color: var(--str); }
+  .cs-code :global(.tk-n) { color: #b5cea8; }
+  .cs-code :global(.tk-c) { color: var(--comment); }
+  .cs-code :global(.cs-caret) {
+    display: inline-block; width: 2px; height: 1.2em; margin-left: 1px; background: #aeafad;
+    vertical-align: -0.25em; animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 600px) {
+    .scroller { height: 360px; gap: 10px; padding-right: 12px; font-size: 10px; overflow-x: auto; }
+    .cs-gutter { min-width: 28px; }
+    .cs-term { padding-inline: 14px; }
+  }
+
+.hero-preview { padding-top: 150px; font-family: var(--font-sans); scroll-margin-top: 96px; }
+.copy, .window { min-width: 0; }
+.scroller { overflow: auto; scroll-behavior: auto; }
+.btn { text-decoration: none; }
+.bar button[hidden] { display: none; }
+@media (max-width:600px) { .hero-preview { padding-top: 116px; } .bar { gap: 5px; padding-left: 10px; } .bar button { padding-inline: 7px; } .tab { margin-left: 6px; } }
+@media(prefers-reduced-motion:reduce) { .hero-preview :global(.cs-caret), .hero-preview :global(.cs-tl) { animation: none; opacity: 1; } }
+</style>
+<script>
+import "../scripts/codeStory.js";
+</script>
