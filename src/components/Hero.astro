@@ -1,3 +1,93 @@
+---
+const source = [
+  "var ingeniero = new FernandoGarinTejedor",
+  "{",
+  "    Base = \"Buenos Aires, AR\",",
+  "    Idiomas = [\"Español\", \"Inglés\"],",
+  "    Modalidad = Remoto",
+  "};",
+  "",
+  "// 1998 — 2002",
+  "ingeniero.Estudiar(\"Ing. en Informática\", \"UNLaM\");",
+  "ingeniero.Tesis = new Consultorio(Vb6, Access)",
+  "{",
+  "    Nota = 10 // sí, diez",
+  "};",
+  "",
+  "// 2003 — Correo Argentino",
+  "var envio = new Envio([Java, Vb6, SqlServer]);",
+  "envio.Rastrear(Admision, Despacho, Arribo,",
+  "               Distribucion, Entrega);",
+  "",
+  "// 2005 — GLD Consultores",
+  "var equipo = ingeniero.Liderar(clientes: 3);",
+  "equipo.Construir<Torneos>(\"AAT\")",
+  "      .ConAfiliaciones().ConFixture().ConRanking();",
+  "equipo.Liquidar(planesSociales, en: TSql);",
+  "",
+  "// 2011 — IGJ, casi 15 años",
+  "ingeniero.Rol = Referente(\".NET\") | Arquitecto;",
+  "igj.Stack = [AspNetCore, Angular, WebApi];",
+  "foreach (var legacy in igj.Sistemas)",
+  "    await legacy.ModernizarAsync(to: Spa);",
+  "db.Motores = [SqlServer, Oracle, PostgreSql];",
+  "",
+  "// 2026 — hoy",
+  "ingeniero.Stack = [Net10, Kafka, Docker, S3];",
+  "var flota = kafka.Consume<Gps>(paises: 5);",
+  "await foreach (var posicion in flota)",
+  "{",
+  "    await telemetria.ProcesarAsync(posicion);",
+  "    await s3.GuardarAsync(posicion);",
+  "}",
+  "",
+  "// side projects",
+  "ingeniero.Proyectos.Add(new Tero(MultiTenant));",
+  "ingeniero.Proyectos.Add(new ConsultorioOne(Net10));",
+  "",
+  "// cómo trabajo",
+  "var codigo = await agentes.ImplementarAsync(plan);",
+  "ingeniero.Revisar(codigo);   // el criterio es mío",
+  "",
+  "Console.WriteLine(ingeniero.Disponible);"
+];
+const typos = [
+  {
+    "find": "Rastrear",
+    "offset": 3,
+    "wrong": "rt"
+  },
+  {
+    "find": "ModernizarAsync",
+    "offset": 5,
+    "wrong": "nr"
+  },
+  {
+    "find": "ImplementarAsync",
+    "offset": 4,
+    "wrong": "mw"
+  }
+];
+const terminal = [
+  {
+    "html": "<span style=\"color:var(--violet-text)\">$</span> dotnet run"
+  },
+  {
+    "html": "✔ Build succeeded · 0 warnings · 0 errors",
+    "cls": "ok"
+  },
+  {
+    "html": "<span style=\"color:var(--kw)\">info:</span> 20+ años · .NET 2.0 → 10 · 2 proyectos propios",
+    "cls": "muted"
+  },
+  {
+    "html": "True"
+  },
+  {
+    "html": "<span class=\"user\">fernando@portfolio</span>:<span style=\"color:var(--kw)\">~</span>$ <span class=\"cursor\"></span>"
+  }
+];
+---
 <section id="inicio" class="container hero-preview">
   <div class="copy">
     <p class="status mono"><span class="dot"></span>Disponible para nuevos desafíos · Remoto desde Buenos Aires</p>
@@ -5,7 +95,7 @@
     <p class="sub">Ingeniero en Informática con más de 20 años desarrollando software. Hoy trabajo con microservicios .NET, APIs y procesamiento de eventos en tiempo real.</p>
     <div class="ctas"><a href="#proyectos" class="btn btn-primary">Ver proyectos →</a><a href="#contacto" class="btn btn-ghost">Hablemos</a></div>
   </div>
-  <div role="group" aria-label="Animación de Program.cs: recorrido profesional. La trayectoria completa está en la sección Experiencia." class="window" data-code-story data-source='["var ingeniero = new FernandoGarinTejedor","{","    Base = \"Buenos Aires, AR\",","    Idiomas = [\"Español\", \"Inglés\"],","    Modalidad = Remoto","};","","// 1998 — 2002","ingeniero.Estudiar(\"Ing. en Informática\", \"UNLaM\");","ingeniero.Tesis = new Consultorio(Vb6, Access)","{","    Nota = 10 // sí, diez","};","","// 2003 — Correo Argentino","var envio = new Envio([Java, Vb6, SqlServer]);","envio.Rastrear(Admision, Despacho, Arribo,","               Distribucion, Entrega);","","// 2005 — GLD Consultores","var equipo = ingeniero.Liderar(clientes: 3);","equipo.Construir<Torneos>(\"AAT\")","      .ConAfiliaciones().ConFixture().ConRanking();","equipo.Liquidar(planesSociales, en: TSql);","","// 2011 — IGJ, casi 15 años","ingeniero.Rol = Referente(\".NET\") | Arquitecto;","igj.Stack = [AspNetCore, Angular, WebApi];","foreach (var legacy in igj.Sistemas)","    await legacy.ModernizarAsync(to: Spa);","db.Motores = [SqlServer, Oracle, PostgreSql];","","// 2026 — hoy","ingeniero.Stack = [Net10, Kafka, Docker, S3];","var flota = kafka.Consume<Gps>(paises: 5);","await foreach (var posicion in flota)","{","    await telemetria.ProcesarAsync(posicion);","    await s3.GuardarAsync(posicion);","}","","// side projects","ingeniero.Proyectos.Add(new Tero(MultiTenant));","ingeniero.Proyectos.Add(new ConsultorioOne(Net10));","","// cómo trabajo","var codigo = await agentes.ImplementarAsync(plan);","ingeniero.Revisar(codigo);   // el criterio es mío","","Console.WriteLine(ingeniero.Disponible);"]' data-typos='[{"find":"Rastrear","offset":3,"wrong":"rt"},{"find":"ModernizarAsync","offset":5,"wrong":"nr"},{"find":"ImplementarAsync","offset":4,"wrong":"mw"}]' data-terminal='[{"html":"<span style=\"color:var(--violet-text)\">$</span> dotnet run"},{"html":"✔ Build succeeded · 0 warnings · 0 errors","cls":"ok"},{"html":"<span style=\"color:var(--kw)\">info:</span> 20+ años · .NET 2.0 → 10 · 2 proyectos propios","cls":"muted"},{"html":"True"},{"html":"<span class=\"user\">fernando@portfolio</span>:<span style=\"color:var(--kw)\">~</span>$ <span class=\"cursor\"></span>"}]'>
+  <div role="group" aria-label="Animación de Program.cs: recorrido profesional. La trayectoria completa está en la sección Experiencia." class="window" data-code-story data-source={JSON.stringify(source)} data-typos={JSON.stringify(typos)} data-terminal={JSON.stringify(terminal)}>
     <div class="bar mono"><span class="d" style="background:#ff5f57"></span><span class="d" style="background:#febc2e"></span><span class="d" style="background:#28c840"></span><span class="tab">Program.cs</span><span class="grow"></span><button type="button" class="cs-skip">Saltar ⏭</button><button type="button" class="cs-replay" hidden>↻ Repetir</button></div>
     <div class="scroller mono" aria-hidden="true"><div class="cs-gutter"></div><div class="cs-code"></div></div>
     <div class="cs-term mono" aria-hidden="true"></div>
@@ -14,7 +104,7 @@
 <style>
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap");
 /* Tokens y utilidades compartidas del portfolio */
-.hero-preview-preview {
+.hero-preview {
   --bg: #07111f;
   --surface: #0b1829;
   --surface-2: #0f2139;
