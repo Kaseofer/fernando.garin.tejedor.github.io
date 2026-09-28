@@ -21,7 +21,7 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
 
 <style>
   .nav-wrap { max-width: 1440px; width: calc(100% - 40px); }
-  .brand-logo { flex-shrink: 0; width: min(630px, calc(100% - 52px)); }
+  .brand-logo { flex-shrink: 0; width: clamp(340px, 34vw, 450px); }
   /* Alinea la firma con el título del hero (misma sangría que .hero-copy); el margen
      negativo compensa el x=27 del texto dentro del SVG (27/900 del ancho). */
   @media (min-width: 961px) {
@@ -31,8 +31,8 @@ const cv = `${import.meta.env.BASE_URL}/cv/Fernando-Garin-Tejedor-CV.pdf`;
     .nav a { white-space: nowrap; }
   }
   @media (min-width: 1321px) and (max-width: 1440px) { .nav { gap: 10px; } .nav-wrap { padding-right: 24px; } }
-  .nav { gap: 14px; font-size: .75rem; }
-  @media (max-width: 1320px) {
+  .nav { gap: 9px; font-size: .71rem; }
+  @media (max-width: 1180px) {
     .menu-toggle { display: block; position: relative; z-index: 61; }
     .nav {
       visibility: hidden; opacity: 0; pointer-events: none;
